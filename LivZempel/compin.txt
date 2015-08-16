@@ -1,0 +1,47 @@
+See also: Stored-program computer and Universal Turing machine § Stored-program computer
+
+Von Neumann architecture scheme
+
+Von Neumann architecture scheme
+The Von Neumann architecture, also known as the Von Neumann model and Princeton architecture, is a computer architecture based on that described in 1945 by the mathematician and physicist John von Neumann and others in the First Draft of a Report on the EDVAC.[1] This describes a design architecture for an electronic digital computer with parts consisting of a processing unit containing an arithmetic logic unit and processor registers, a control unit containing an instruction register and program counter, a memory to store both data and instructions, external mass storage, and input and output mechanisms.[1][2] The meaning has evolved to be any stored-program computer in which an instruction fetch and a data operation cannot occur at the same time because they share a common bus. This is referred to as the Von Neumann bottleneck and often limits the performance of the system.[3]
+
+The design of a Von Neumann architecture is simpler than the more modern Harvard architecture which is also a stored-program system but has one dedicated set of address and data buses for reading data from and writing data to memory, and another set of address and data buses for fetching instructions.
+
+A stored-program digital computer is one that keeps its program instructions, as well as its data, in read-write, random-access memory (RAM). Stored-program computers were an advancement over the program-controlled computers of the 1940s, such as the Colossus and the ENIAC, which were programmed by setting switches and inserting patch leads to route data and to control signals between various functional units. In the vast majority of modern computers, the same memory is used for both data and program instructions, and the Von Neumann vs. Harvard distinction applies to the cache architecture, not the main memory.
+
+Contents  [hide] 
+1 History
+2 Development of the stored-program concept
+3 Early von Neumann-architecture computers
+4 Early stored-program computers
+5 Evolution
+6 Von Neumann bottleneck
+7 Non–von Neumann processors
+8 See also
+9 References
+9.1 Inline
+9.2 General
+10 External links
+History[edit source | editbeta]
+The earliest computing machines had fixed programs. Some very simple computers still use this design, either for simplicity or training purposes. For example, a desk calculator (in principle) is a fixed program computer. It can do basic mathematics, but it cannot be used as a word processor or a gaming console. Changing the program of a fixed-program machine requires rewiring, restructuring, or redesigning the machine. The earliest computers were not so much "programmed" as they were "designed". "Reprogramming", when it was possible at all, was a laborious process, starting with flowcharts and paper notes, followed by detailed engineering designs, and then the often-arduous process of physically rewiring and rebuilding the machine. It could take three weeks to set up a program on ENIAC and get it working.[4]
+
+With the proposal of the stored-program computer this changed. A stored-program computer includes by design an instruction set and can store in memory a set of instructions (a program) that details the computation.
+
+A stored-program design also allows for self-modifying code. One early motivation for such a facility was the need for a program to increment or otherwise modify the address portion of instructions, which had to be done manually in early designs. This became less important when index registers and indirect addressing became usual features of machine architecture. Another use was to embed frequently used data in the instruction stream using immediate addressing. Self-modifying code has largely fallen out of favor, since it is usually hard to understand and debug, as well as being inefficient under modern processor pipelining and caching schemes.
+
+On a large scale, the ability to treat instructions as data is what makes assemblers, compilers, linkers, loaders, and other automated programming tools possible. One can "write programs which write programs".[5] On a smaller scale, repetitive I/O-intensive operations such as the BITBLT image manipulation primitive or pixel & vertex shaders in modern 3D graphics, were considered inefficient to run without custom hardware. These operations could be accelerated on general purpose processors with "on the fly compilation" ("just-in-time compilation") technology, e.g., code-generating programs—one form of self-modifying code that has remained popular.
+
+There are drawbacks to the Von Neumann design. Aside from the Von Neumann bottleneck described below, program modifications can be quite harmful, either by accident or design. In some simple stored-program computer designs, a malfunctioning program can damage itself, other programs, or the operating system, possibly leading to a computer crash. Memory protection and other forms of access control can usually protect against both accidental and malicious program modification.
+
+Development of the stored-program concept[edit source | editbeta]
+The mathematician Alan Turing, who had been alerted to a problem of mathematical logic by the lectures of Max Newman at the University of Cambridge, wrote a paper in 1936 entitled On Computable Numbers, with an Application to the Entscheidungsproblem, which was published in the Proceedings of the London Mathematical Society.[6] In it he described a hypothetical machine which he called a "universal computing machine", and which is now known as the "Universal Turing machine". The hypothetical machine had an infinite store (memory in today's terminology) that contained both instructions and data. John von Neumann became acquainted with Turing while he was a visiting professor at Cambridge in 1935, and also during Turing's PhD year at the Institute for Advanced Study in Princeton, New Jersey during 1936 – 37. Whether he knew of Turing's paper of 1936 at that time is not clear.
+
+In 1936, Konrad Zuse also anticipated in two patent applications that machine instructions could be stored in the same storage used for data.[7]
+
+Independently, J. Presper Eckert and John Mauchly, who were developing the ENIAC at the Moore School of Electrical Engineering, at the University of Pennsylvania, wrote about the stored-program concept in December 1943.[8][9] In planning a new machine, EDVAC, Eckert wrote in January 1944 that they would store data and programs in a new addressable memory device, a mercury metal delay line memory. This was the first time the construction of a practical stored-program machine was proposed. At that time, he and Mauchly were not aware of Turing's work.
+
+Von Neumann was involved in the Manhattan Project at the Los Alamos National Laboratory, which required huge amounts of calculation. This drew him to the ENIAC project, during the summer of 1944. There he joined into the ongoing discussions on the design of this stored-program computer, the EDVAC. As part of that group, he wrote up a description titled First Draft of a Report on the EDVAC[1] based on the work of Eckert and Mauchly. It was unfinished when his colleague Herman Goldstine circulated it with only von Neumann's name on it, to the consternation of Eckert and Mauchly.[10] The paper was read by dozens of von Neumann's colleagues in America and Europe, and influenced the next round of computer designs.
+
+Jack Copeland considers that it is "historically inappropriate, to refer to electronic stored-program digital computers as 'von Neumann machines'".[11] His Los Alamos colleague Stan Frankel said of von Neumann's regard for Turing's ideas:
+
+I know that in or about 1943 or '44 von Neumann was well aware of the fundamental importance of Turing's paper of 1936 ... Von Neumann introduced me to that paper and at his urging I studied it with care. Many people have acclaimed von Neumann as the "father of the computer" (in a modern sense of the term) but I am sure that he would never have made that mistake himself. He might well be called the midwife, perhaps, but he firmly emphasized to me, and to others I am sure, that the fundamental conception is owing to Turing— in so far as not anticipated by Babbage ... Both Turing and von Neumann, of course, also made substantial contributions to the "reduction to practice" of these concepts but I would not regard these as comparable in importance with the introduction and explication of the concept of a computer able to store in its memory its program of activities and of modifying that program in the course of these activities. [12]
