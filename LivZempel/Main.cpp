@@ -8,12 +8,11 @@
 #include "Compressor.h"
 #include "Decompressor.h"
 #include <iostream>
+#include <string>
 
 int main ()
 {
-	char* fileName = "compin.txt";
-
-	std::string file(fileName);
+	std::string file = "compin.txt";
 	/* An example run */
 	Compressor compressor(file);
 	// compressed files will have a .fz extension

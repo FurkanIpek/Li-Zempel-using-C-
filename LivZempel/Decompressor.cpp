@@ -88,7 +88,7 @@ void Decompressor::decompress (std::ifstream& read, std::ofstream& write, std::s
 	else
 		throw new std::exception("This file cannot be decompressed by Ziv-Lempel");
 }
-#include <iostream>
+
 void Decompressor::livZempel (std::ifstream& read, std::ofstream& write, std::string* memory, unsigned char& c)
 {
 	std::string line, original, word;
